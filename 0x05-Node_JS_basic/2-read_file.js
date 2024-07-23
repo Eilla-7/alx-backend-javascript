@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-function countStudents (path) {
+function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf-8');
 
-    const lines = data.trim().split('\n').filter(line => line);
+    const lines = data.trim().split('\n').filter((line) => line);
 
     if (lines.length <= 1) {
       console.log('Number of students: 0');
@@ -22,7 +22,7 @@ function countStudents (path) {
           fields[field] = [];
         }
         fields[field].push(firstName);
-        numberOfStudents++;
+        numberOfStudents += 1;
       }
     }
 
