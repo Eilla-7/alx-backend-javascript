@@ -8,7 +8,6 @@ function countStudents (path) {
     if (lines.length <= 1) throw new Error('Cannot load the database');
 
     const students = lines.slice(1).map(line => line.split(',')).filter(fields => fields.length === 4);
-
     if (students.length === 0) throw new Error('Cannot load the database');
 
     const fields = {};
@@ -28,7 +27,7 @@ function countStudents (path) {
     for (const [field, names] of Object.entries(fields)) {
       console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
     }
-  } catch (error) {
+  } catch (err) {
     console.error('Cannot load the database');
   }
 }
